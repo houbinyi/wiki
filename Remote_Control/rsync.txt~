@@ -4,12 +4,12 @@ Creation-Date: 2016-02-22T12:01:37+08:00
 
 ====== rsync ======
 
-''rsync [OPTION]... SRC [SRC]... DEST''
-''rsync [OPTION]... SRC [SRC]... [USER@]HOST:DEST''
+''rsync options source destination''
+rsync [OPTION]... SRC [SRC]... DEST
+rsync [OPTION]... SRC [SRC]... [USER@]HOST:DEST
 ''rsync [OPTION]... SRC [SRC]... [USER@]HOST::DEST''
 ''rsync [OPTION]... SRC [SRC]... rsync://[USER@]HOST[:PORT]/DEST''
 ''rsync [OPTION]... [USER@]HOST:SRC [DEST]''
 ''rsync [OPTION]... [USER@]HOST::SRC [DEST]''
 ''rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]''
 
-''$ rsync -avz user@host:/remote/path/ /local/path/''
