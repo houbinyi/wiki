@@ -1,17 +1,9 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-<<<<<<< HEAD
-Creation-Date: 2016-02-25T00:02:18+08:00
 
 ====== kvm ======
 
 ~~apt-get install qemu-kvm ubuntu-vm-builder bridge-utils~~
 
 apt-get intall qemu-kvm 
-=======
-Creation-Date: 2016-03-28T22:32:13+08:00
-
-====== kvm ======
-
->>>>>>> 5ff12f85364da65b92951f246234b7f17602ad1b
 
