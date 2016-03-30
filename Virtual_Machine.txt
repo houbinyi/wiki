@@ -1,6 +1,10 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
+<<<<<<< HEAD
 Creation-Date: 2016-02-24T23:45:32+08:00
+=======
+Creation-Date: 2016-03-28T22:31:59+08:00
+>>>>>>> 5ff12f85364da65b92951f246234b7f17602ad1b
 
 ====== Virtual Machine ======
 

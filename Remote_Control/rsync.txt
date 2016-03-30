@@ -13,3 +13,5 @@ Creation-Date: 2016-02-22T12:01:37+08:00
 ''rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]''
 
 ''$ rsync -avz user@host:/remote/path/ /local/path/''
+
+--progress --delete 
