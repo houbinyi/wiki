@@ -3,7 +3,8 @@ Wiki-Format: zim 0.4
 
 ====== kvm ======
 
-~~apt-get install qemu-kvm ubuntu-vm-builder bridge-utils~~
+''apt-get install qemu-kvm ubuntu-vm-builder bridge-utils''
 
-apt-get intall qemu-kvm 
+''apt-get intall qemu-kvm'' 
 
+ 

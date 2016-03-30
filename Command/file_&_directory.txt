@@ -4,40 +4,42 @@ Creation-Date: 2016-03-28T22:37:41+08:00
 
 ====== file & directory ======
 
-1. Standard Directory Pattern
+1. ''Standard Directory Pattern''
+	'''
 	[scope] [category] [application]
 	example: /[usr/local]/[share]/[emacs] 
-2. Category
-	a. application -  bin, sbin, lib, libexec
-	b. document - doc, info, main, share
-	c. configuration - etc, init.d, rc.d
-	d. programming - include, src
-	e. website - cgi-bin, html, public_html, WWW
-	f. display - fonts, X11
-	g. hardware - dev, media, mnt, misc
-	h. run status - var, lock, log, mail, run, spool, tmp, proc
-3. Scope
-	a. /
-	b. [[/usr]]
-	c. [[/usr/game]]
-	d. [[/usr/local]]
-	e. [[/usr/X11R6]]
-	f. [[/lib]]
-	g. [[/usr/lib]]
-	h. [[/usr/local/lib]]
-	i. [[/usr/games/lib]]
-	j. /usr/X11R6/lib 
-4. File Command
-	a. ls -a -l -d -F -i -s -R -d
-	b. cp -p -a -r -i -f
-	c. mv -i -f
-	d. rm -i -f -r
-	e. ln -s -i -f -d
-5. Directory Command
-	a. cd
-	b. pwd
-	c. basename
-	d. dirname
-	e. mkdir -p -m 
-	f. rmdir -p
-	g. rm -r
+	'''
+2. ''Category''
+	a. ''application -  bin, sbin, lib, libexec''
+	b. ''document - doc, info, main, share''
+	c. ''configuration - etc, init.d, rc.d''
+	d. ''programming - include, src''
+	e. ''website - cgi-bin, html, public_html, WWW''
+	f. ''display - fonts, X11''
+	g. ''hardware - dev, media, mnt, misc''
+	h. ''run status - var, lock, log, mail, run, spool, tmp, proc''
+3. ''Scope''
+	a. ''/''
+	b. ''/usr''
+	c. ''/usr/game''
+	d. ''/usr/local''
+	e. ''/usr/X11R6''
+	f. ''/lib''
+	g. ''/usr/lib''
+	h. ''/usr/local/lib''
+	i. ''/usr/games/lib''
+	j. ''/usr/X11R6/lib ''
+4. ''File Command''
+	a. ''ls -a -l -d -F -i -s -R -d''
+	b. ''cp -p -a -r -i -f''
+	c. ''mv -i -f''
+	d. ''rm -i -f -r''
+	e. ''ln -s -i -f -d''
+5. ''Directory Command''
+	a. ''cd''
+	b. ''pwd''
+	c. ''basename''
+	d. ''dirname''
+	e. ''mkdir -p -m ''
+	f. ''rmdir -p''
+	g. ''rm -r''
