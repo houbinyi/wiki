@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-03-30T10:43:28+08:00
+
+====== MongoDB ======
+
+db.COLLECTION_NAME.drop()
+
