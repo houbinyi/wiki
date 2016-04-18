@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-04-15T10:00:12+08:00
+
+====== Maven ======
+
+mvn clean compile
+mvn clean test
+mvn clean package
+mvn clean install
+
+mvn [[dependency:list]]
+mvn [[dependency:tree]]
+mvn [[dependency:analyze]]
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <path>/</path>
+                    <port>8080</port>
+                </configuration>
+            </plugin>
+
+
+tomcat7:run
