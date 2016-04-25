@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-04-25T10:57:43+08:00
+
+====== disk ======
+
+fdisk -l
+fdisk [[/dev/sdbm/]]
+
+mkfs -t ext3 [[/dev/sdb1]] (-c check broken partition)
+
+mount [[/dev/sdb1]] [[/mnt]]
+vim [[/etc/fstab]]
+[[/dev/sdb1]]	[[/mnt]]	ext3	default 0	1
+
+df -h
+df -T
+
+
+

@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-04-05T13:48:58+08:00
+
+====== 00 ToDoList ======
+
+http://blog.csdn.net/dc_726/article/details/42784275
+http://aruizca.com/steps-to-create-a-vagrant-base-box-with-ubuntu-14-04-desktop-gui-and-virtualbox/
+http://www.continuousdelivery.info/index.php/2011/10/27/vagrant_jenkins_vm/
