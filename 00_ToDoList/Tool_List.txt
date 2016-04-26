@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-04-26T22:52:36+08:00
+
+====== Tool List ======
+
+Virtualization Platform
+	VMware 
+	KVM
+Cloud Platform
+	OpenStack
+	CloudStack
+Configuration Managerment Tools
+	Puppet
+	Chef
+Deployment Framewrok
+	Capistrano
+	Fabric
+Workload  Management Toos
+	Mesos
+	Fleet
+Development Tools
+	Vagrant
+Software Packaging Tools
+	rpm
+	mock
+	dpkg
+	pbuilder
+Secure Linux
+	SELinux
+	AppArmor
+

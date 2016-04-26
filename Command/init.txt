@@ -13,3 +13,18 @@ $ sudo update-rc.d test defaults 95
 
 $ cd /etc/init.d
 $ sudo update-rc.d -f test remove
+
+
+Fedora:(syatemd)
+# systemctl enable docker
+# systemctl start docker
+
+Ubuntu:(upstart)
+# update-rc.d docker.io default
+$ service dcoker.io start
+
+[[RedHat6:(init.d)]]
+$ chkconfig dcoker on
+$ service docker start
+or $ [[/etc/init.d/docker]] start
+
