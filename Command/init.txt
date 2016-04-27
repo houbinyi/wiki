@@ -20,7 +20,7 @@ Fedora:(syatemd)
 # systemctl start docker
 
 Ubuntu:(upstart)
-# update-rc.d docker.io default
+# update-rc.d docker.io defaults
 $ service dcoker.io start
 
 [[RedHat6:(init.d)]]

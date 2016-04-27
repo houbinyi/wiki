@@ -9,9 +9,9 @@ mvn clean test
 mvn clean package
 mvn clean install
 
-mvn [[dependency:list]]
-mvn [[dependency:tree]]
-mvn [[dependency:analyze]]
+mvn dependency:list
+mvn dependency:tree
+mvn dependency:analyze
 
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
