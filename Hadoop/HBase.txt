@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-04-29T15:30:39+08:00
+
+====== HBase ======
+
+Restful:
+
+$ hbase rest start 8585
+$ hbase-daemon.sh start rest -p 8585
+$ hbase-daemon.sh stop rest
+
+URL:
+/version
+/version/cluster 
+/status/cluster
