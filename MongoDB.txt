@@ -4,5 +4,13 @@ Creation-Date: 2016-03-30T10:43:28+08:00
 
 ====== MongoDB ======
 
+[commend line]
+show dbs
+show collections
+show users;
+
+db.[collections].find({[some condition]})
+
+
 db.COLLECTION_NAME.drop()
 
