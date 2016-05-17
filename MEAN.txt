@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-05-04T10:54:54+08:00
+
+====== MEAN ======
+Created 星期三 04 五月 2016
+

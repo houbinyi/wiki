@@ -10,7 +10,7 @@ show collections
 show users;
 
 db.[collections].find({[some condition]})
-
+cd 
 
 db.COLLECTION_NAME.drop()
 
