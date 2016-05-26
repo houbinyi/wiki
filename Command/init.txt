@@ -4,8 +4,11 @@ Creation-Date: 2016-04-26T16:50:30+08:00
 
 ====== init ======
 
-copy file to [[/etc/init.d/]]
-update-rc.d xxx defaults NN
+
+Ubuntu
+# vim [[/etc/init.d/serviceName]]
+# chmod 755 [[/etc/init.d/]][[/etc/init.d/serviceName|serviceName]]
+# update-rc.d [[/etc/init.d/serviceName|serviceName]] defaults NN
 
 $ sudo chmod 755 [[/etc/init.d/test]]
 $ cd /etc/init.d
