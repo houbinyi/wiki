@@ -13,13 +13,37 @@ apt-file list package
  
 apt-show-versions
 
-dpkg -c xxx.deb  查看deb包含有哪些文件(不安装)
-dpkg -L debname  查看deb包含有哪些文件(不安装)
 dpkg -S /usr/bin/ls 查看某个文件属于哪个deb包
-dpkg -i xxx.deb 安装deb包
 dpkg -r debname
 dpkg -X xxx.deb dirname
 dpkg -e xxx.deb 
+
+dpkg -c filename 显示一个Deb文件的目录
+dpkg -L package-Name 显示一个包安装到系统里面的文件目录信息
+dpkg -i <.deb file name> 安装软件
+dpkg -R 安装一个目录下面所有的软件包
+dpkg --unpack package_file 释放软件包，但是不进行配置,如果和-R一起使用，参数可以是一个目录
+dpkg --configure package_file 重新配置和释放软件包,如果和-a一起使用，将配置所有没有配置的软件包
+dpkg -r 删除软件包（保留其配置信息）
+dpkg --update-avail <Packages-file> 替代软件包的信息
+dpkg --merge-avail <Packages-file> 合并软件包信息
+dpkg -A package_file 从软件包里面读取软件的信息
+dpkg -P 删除一个包（包括配置信息）
+dpkg --forget-old-unavail 丢失所有的Uninstall的软件包信息
+dpkg --clear-avail 删除软件包的Avaliable信息
+dpkg -C 查找只有部分安装的软件包信息
+dpkg --compare-versions ver1 op ver2 比较同一个包的不同版本之间的差别
+dpkg --help 显示帮助信息
+dpkg --licence (or) dpkg --license 显示dpkg的Licence
+dpkg --version 显示dpkg的版本号
+dpkg -b direc×y [filename] 建立一个deb文件
+dpkg -I filename [control-file] 显示一个Deb的说明
+dpkg -l package-name-pattern 搜索Deb包
+dpkg -l 显示所有已经安装的Deb包，同时显示版本号以及简短说明
+dpkg -s package-name 报告指定包的状态信息
+dpkg -S filename-search-pattern 搜索指定包里面的文件（模糊查询）
+dpkg -p package-name 显示包的具体信息
+
 
 dpkg-deb --build Cydia
 

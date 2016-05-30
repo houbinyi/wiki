@@ -9,6 +9,7 @@ show dbs
 show collections
 show users;
 
+use <database>
 db.[collections].find({[some condition]})
 cd 
 
