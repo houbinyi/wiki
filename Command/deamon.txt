@@ -7,3 +7,6 @@ Creation-Date: 2016-04-25T16:39:05+08:00
 upstart
 systemd
 servuce
+start-stop-daemon
+
+start-stop-daemon --start --quiet --pidfile /opt/nginx.pid --exec /home/chenshu/nginx/bin/nginx  -- -c /home/chenshu/nginx/etc_nginx/nginx.conf
