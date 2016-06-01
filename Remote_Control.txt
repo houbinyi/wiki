@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-02-22T12:01:29+08:00
-
-====== Remote Control ======
-
-

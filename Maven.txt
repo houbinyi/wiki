@@ -10,6 +10,8 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 
 mvn archetype:generate -DgroupId=cn.luxh.app -DartifactId=my-web-app -DarchetypeArtifactId=maven-archetype-webapp -DinteractivMode=false
 
+$ mvn dependency:copy-dependencies -DoutputDirectory=OUTPUT_DIR
+
 <build>
   <plugins>
     <plugin>
@@ -54,3 +56,27 @@ mvn archetype:generate -DgroupId=cn.luxh.app -DartifactId=my-web-app -Darchetype
     </plugin>
   </plugins>
 </build>
+
+
+mvn clean compile
+mvn clean test
+mvn clean package
+mvn clean install
+
+mvn dependency:list
+mvn dependency:tree
+mvn dependency:analyze
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <path>/</path>
+                    <port>8080</port>
+                </configuration>
+            </plugin>
+
+
+tomcat7:run
+
