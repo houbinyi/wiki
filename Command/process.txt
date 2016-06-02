@@ -6,8 +6,7 @@ Creation-Date: 2016-03-28T23:15:13+08:00
 
 
 monit
-supervisor
+supervisord
 daemontools
 runit
 
-top

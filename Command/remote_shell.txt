@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2016-03-01T10:19:24+08:00
 
-====== distributed shell ======
+====== remote shell ======
 '''
 
 pdsh -R ssh -l user -w host1,host2 "some command"

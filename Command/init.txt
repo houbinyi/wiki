@@ -5,29 +5,22 @@ Creation-Date: 2016-04-26T16:50:30+08:00
 ====== init ======
 
 
-Ubuntu
-# vim [[/etc/init.d/serviceName]]
-# chmod 755 [[/etc/init.d/]][[/etc/init.d/serviceName|serviceName]]
-# update-rc.d [[/etc/init.d/serviceName|serviceName]] defaults NN
-
-$ sudo chmod 755 [[/etc/init.d/test]]
-$ cd /etc/init.d
-$ sudo update-rc.d test defaults 95
-
-$ cd /etc/init.d
-$ sudo update-rc.d -f test remove
-
-
-Fedora:(syatemd)
+**Fedora:(systemd)**
 # systemctl enable docker
 # systemctl start docker
 
-Ubuntu:(upstart)
-# update-rc.d docker.io defaults
-$ service dcoker.io start
+**Ubuntu:(upstart)**
+# vim /etc/init.d/serviceName
+# chmod 755 /etc/init.d/serviceName
+# update-rc.d serviceName defaults 99
+# update-rc.d -f serviceName remove
 
-[[RedHat6:(init.d)]]
+# service serviceName start
+
+**RedHat6:(init.d)**
 $ chkconfig dcoker on
 $ service docker start
-or $ [[/etc/init.d/docker]] start
+or $ /etc/init.d/docker start
+
+chkconfig
 
