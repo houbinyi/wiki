@@ -19,6 +19,8 @@ Deployment Framewrok
 Workload  Management Toos
 	Mesos
 	Fleet
+	Omega
+	YARN
 Development Tools
 	Vagrant
 Software Packaging Tools
@@ -29,4 +31,18 @@ Software Packaging Tools
 Secure Linux
 	SELinux
 	AppArmor
+Orchestration
+
+
+PaaS
+	Swarm/Machine/Compose
+	Mesos/Marathon
+	Kubernetes
+Distributed ***
+	etcd
+	zookeeper
+	consul
+	
+	
+
 
