@@ -43,3 +43,5 @@ Creation-Date: 2016-03-28T22:37:41+08:00
 	e. ''mkdir -p -m ''
 	f. ''rmdir -p''
 	g. ''rm -r''
+
+lsof

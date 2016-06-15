@@ -4,17 +4,17 @@ Creation-Date: 2016-05-16T16:27:21+08:00
 
 ====== disk & partition ======
 
-#device view 
+#block device view 
 sudo fdisk -l
 
-#partition
+#volumn
 sudo fdisk /dev/sdb
 sudo parted
 
-#partition info
+#volumn info
 sudo lsblk
 
-# format
+#volumn format
 sudo mkfs -t ext4 -c /dev/sdb1  (-c check broken partition)
 sudo mkfs.ext4 /dev/sdb1  -E lazy_itable_init
 sudo mkfs.ext3 -T largefile /dev/sdb1
