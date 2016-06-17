@@ -6,6 +6,11 @@ Creation-Date: 2016-05-24T12:44:39+08:00
 
 http://blog.csdn.net/michaelwubo/article/details/40588059
 
+sudo apt-get install software-properties-common
+sudo apt-get install apt-file && apt-file update
+apt-file search add-apt-repository
+
+
 sudo apt-file update
 apt-file search filename
 apt-file search /path/to/file

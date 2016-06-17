@@ -6,6 +6,11 @@ Creation-Date: 2016-06-10T01:04:34+08:00
 
 — Remote Dictionary Server
 
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:chris-lea/redis-server
+sudo apt-get update
+sudo apt-get install redis-server
+
 **Tools:**
 redis-server
 redis-cli
