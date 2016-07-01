@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2016-04-25T16:39:05+08:00
 
-====== deamon & init ======
+====== deamon ======
 
 === daemon ===
 **start-stop-daemon**
@@ -10,16 +10,25 @@ Creation-Date: 2016-04-25T16:39:05+08:00
 
 /sbin/start-stop-daemon --stop --oknodo --pidfile /opt/nginx.pid
 
-=== keepalive ===
+=== keep alive ===
 **supervisord**
 sudo apt-get install supervisor
-sudo vim /etc/supervisord/conf.d/*.conf
 sudo /etc/init.d/supervisor stop
 sudo /etc/init.d/supervisor start
+
+sudo vim /etc/supervisord/conf.d/*.conf
+
+sudo supervisorctl status
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl reload
 
 **monit**
 **daemontools**
 **runit**
+
+=== cron ===
+
 
 
 === init & service ===

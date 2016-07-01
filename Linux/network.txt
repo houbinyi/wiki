@@ -6,4 +6,14 @@ Creation-Date: 2016-04-05T10:56:32+08:00
 
 netstat -apn 
 
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_fin_timeout = 30
+net.ipv4.tcp_keepalive_time = 1200   
+net.ipv4.ip_local_port_range = 1024    65000   ## 端口分配范围
+net.ipv4.tcp_max_tw_buckets = 5000   ## 设置"time_wait"的桶最多容纳5000个
+
+添加完毕以后
+
+sysctl -p 让以上配置生效
 
