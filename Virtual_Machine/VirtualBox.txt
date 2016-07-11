@@ -4,73 +4,115 @@ Creation-Date: 2016-07-08T13:19:54+08:00
 
 ====== VirtualBox ======
 
-VBoxManage list vms
-VBoxManage list ostypes
-VBoxManage guestproperty enumerate winxp01
-VBoxManage startvm winxp01 --type gui
-VBoxManage startvm winxp01 --type headless
+list hostdvds
+list hostfloppies
+list bridgedifs
+list hostonlyifs
+list hostinfo
+list hostcpuids
 
+list hddbackends
+list systemproperties
+list ostypes
+list bridgedifs
+list extpacks
+list usbhost
 
-VBoxManage createvm --name "winxp01" --ostype "WindowsXP" --register
-VBoxManage createhd --filename "/home/houbinyi/winxp.vdi" --size 10 --format vdi --variant standard
-VBoxManage storagectl winxp01 --name "IDE Controller" --add ide --controller PIIX3
-VBoxManage stroagetattach winxp01 --storagectl "IDE COntroller" --port 0 --device 0 --type hdd --medium "/home/houbinyi/winxp.vdi"
-VBoxManage storagectl winxp01 --name "SATA Controller" --add sata --controller IntelAHCI
-VBoxManage stroagetattach winxp01 --storagectl "SATA Controller" --port 1 --device 0 --type dvddrive --medium "/home/houbinyi/winxp.install.iso"
-VBoxManage showvminfo winxp01
+list hdds
+list dvds
+list floppies
+list vms
+list --long vms
 
-VBoxManage modifyvm winxp --name winxp02
-VBoxManage modifyvm winxp --ostype Windows2000
-VBoxManage modifyvm winxp --snapshotfolder "/home/houbinyi/"
-VBoxManage modifyvm winxp --mouse ps2 --keyboard ps2
-VBoxManage modifyvm winxp --mouse usb --keyboard usb
-VBoxManage modifyvm winxp --acpi on
-VBoxManage modifyvm winxp --pae on
-VBoxManage modifyvm winxp --cpus 2
-VBoxManage modifyvm winxp --cpuexecutioncap 100
-VBoxManage modifyvm winxp --ioapic on
-VBoxManage modifyvm winxp --vtxupid on
-VBoxManage modifyvm winxp --hwvirtex on
-VBoxManage modifyvm winxp --hwvirtexexcl on
-VBoxManage modifyvm winxp --nestedpaging on
-VBoxManage modifyvm winxp --largepages on
-VBoxManage modifyvm winxp --bioslogodispalytime 3600
-VBoxManage modifyvm winxp --biosbootmenu menuonly
-VBoxManage modifyvm winxp --biosbootmenu disable
-VBoxManage modifyvm winxp --biosbootmenu messageandmenu
-VBoxManage modifyvm winxp --bioslogofadein off
-VBoxManage modifyvm winxp --bioslogofadeout off
-VBoxManage modifyvm winxp --bioslogoimagepath "img.640.480.256.bmp"
-VBoxManage modifyvm winxp --bioslogoimagepath defalut
-VBoxManage modifyvm winxp --memory 512
-VBoxManage modifyvm winxp --boot1 dvd --boot2 disk --boot3 net --boot4 floppy
-VBoxManage modifyvm winxp --chipest piix3
-VBoxManage modifyvm winxp --firmware efi
-VBoxManage modifyvm winxp --rtcuseutc on
-VBoxManage modifyvm winxp --vram 128
-VBoxManage modifyvm winxp --monitorcount 2
-VBoxManage modifyvm winxp --accelerate3d on
-VBoxManage modifyvm winxp --accelerate2dvideo on
-VBoxManage modifyvm winxp --audio dsound
-VBoxManage modifyvm winxp --audiocontroller ac97
-VBoxManage modifyvm winxp --audiocontroller hda
-VBoxManage modifyvm winxp --audiocontroller sb16
+showvminfo winxp01
+showvminfo winxp01 --machinereadable
+showvminfo winxp01 -log 123
 
-VBoxManage sharefolder add winxp --name soft --hostpath "/home/houbinyi/solf" --readonly --automount --transient
-VBoxManage sharefolder remove winxp --name soft 
-VBoxManager guestcontrol winxp createdir "/home/houbinyi/hello" --username houbinyi --password houbinyi
-VBoxManager guestcontrol winxp --copyto ... 
-VBoxManager guestcontrol winxp --copyfrom ...
-VBoxManager guestcontrol winxp --execute ... 
-VBoxManager guestcontrol winxp --stat ...
-VBoxManager guestcontrol winxp --updateaddtions ...
+redistervm \filt\path\of\file.vbox
+unregiservm winxp01
+unregiservm winxp01 --delete
+
+setproperty
+list systemproperties
+
+extpack install 'file/to.vbox-extpack'
+
+createvm --name "winxp01" --ostype "WindowsXP" --register
+
+createhd --filename "/home/houbinyi/winxp.vdi" --size 10 --format vdi --variant standard
+storagectl winxp01 --name "IDE Controller" --add ide --controller PIIX3
+stroagetattach winxp01 --storagectl "IDE COntroller" --port 0 --device 0 --type hdd --medium "/home/houbinyi/winxp.vdi"
+storagectl winxp01 --name "SATA Controller" --add sata --controller IntelAHCI
+stroagetattach winxp01 --storagectl "SATA Controller" --port 1 --device 0 --type dvddrive --medium "/home/houbinyi/winxp.install.iso"
+
+startvm winxp01 --type gui
+startvm winxp01 --type headless
+
+sharefolder add winxp --name soft --hostpath "/home/houbinyi/solf" --readonly --automount --transient
+sharefolder remove winxp --name soft 
+
+modifyvm winxp --name winxp02
+modifyvm winxp --ostype Windows2000
+modifyvm winxp --synthcpu on/off
+modifyvm winxp --snapshotfolder "/home/houbinyi/"
+modifyvm winxp --snapshotfolder default
+modifyvm winxp --necspeed1 100
+modifyvm winxp --mouse ps2 --keyboard ps2
+modifyvm winxp --mouse usb --keyboard usb
+modifyvm winxp --acpi on
+modifyvm winxp --pae on
+modifyvm winxp --cpus 2
+modifyvm winxp --cpuexecutioncap 100
+modifyvm winxp --ioapic on
+modifyvm winxp --vtxupid on
+modifyvm winxp --hwvirtex on
+modifyvm winxp --hwvirtexexcl on
+modifyvm winxp --nestedpaging on
+modifyvm winxp --largepages on
+modifyvm winxp --bioslogodispalytime 3600
+modifyvm winxp --bridgeadapter1 "Realtek PCI...."
+modifyvm winxp --biosbootmenu menuonly
+modifyvm winxp --biosbootmenu disable
+modifyvm winxp --biosbootmenu messageandmenu
+modifyvm winxp --bioslogofadein off
+modifyvm winxp --bioslogofadeout off
+modifyvm winxp --bioslogoimagepath "img.640.480.256.bmp"
+modifyvm winxp --bioslogoimagepath defalut
+modifyvm winxp --memory 512
+modifyvm winxp --boot1 dvd --boot2 disk --boot3 net --boot4 floppy
+modifyvm winxp --chipest piix3
+modifyvm winxp --firmware efi
+modifyvm winxp --rtcuseutc on
+modifyvm winxp --vram 128
+modifyvm winxp --monitorcount 2
+modifyvm winxp --accelerate3d on
+modifyvm winxp --accelerate2dvideo on
+modifyvm winxp --audio dsound
+modifyvm winxp --audiocontroller ac97
+modifyvm winxp --audiocontroller hda
+modifyvm winxp --audiocontroller sb16
+
+guestproperty enumerate winxp01
+
+guestcontrol winxp createdir "/home/houbinyi/hello" --username houbinyi --password houbinyi
+guestcontrol winxp --copyto ... 
+guestcontrol winxp --copyfrom ...
+guestcontrol winxp --execute ... 
+guestcontrol winxp --stat ...
+guestcontrol winxp --updateaddtions ...
  
+controlvm winxp poweroff
+controlvm winxp setvideomodehit 800 600 32
+controlvm winxp xcreenshotpng "some.png"
 
+modifyhd "file/path/to.vdi" --compact
+clonevdi file.vmdk file.vdi --format vdi
+modifyhd 'file/to.vdi' --resize 40000
 
+convertformraw 'fite/to.img' 'filt/to.vdi' --format vdi
 
-
-
-VBoxManage controlvm winxp poweroff
-
+metrics setup --list
+metrics steup --period 1 --samples 5 hsot CPU/Load,RAM/Usage
+metrics list winxp
 
 
