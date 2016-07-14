@@ -17,6 +17,7 @@ list ostypes
 list bridgedifs
 list extpacks
 list usbhost
+list dhcpservers
 
 list hdds
 list dvds
@@ -44,6 +45,21 @@ storagectl winxp01 --name "IDE Controller" --add ide --controller PIIX3
 stroagetattach winxp01 --storagectl "IDE COntroller" --port 0 --device 0 --type hdd --medium "/home/houbinyi/winxp.vdi"
 storagectl winxp01 --name "SATA Controller" --add sata --controller IntelAHCI
 stroagetattach winxp01 --storagectl "SATA Controller" --port 1 --device 0 --type dvddrive --medium "/home/houbinyi/winxp.install.iso"
+stroagetattach winxp01 --storagectl "IDE COntroller" --port 1 --device 0 --type dvddrive --medium 'file/path/to.iso'
+
+snapshot winxp take 'some title' --description 'some comment'
+snapshot winxp list
+snapshot winxp restore
+snspshot winxp take 'some title' --pause
+
+clonevm winxp --mode machine --name winxpclone --register
+clonevm winxp --mode all --name winxpclonefull --register
+clonevm winxp --snapshot 'test' --options link --name 'winxplink'
+
+export winxp --output 'file/path/to.voa'
+import 'file/path/to.voa'
+import 'file/path/to.voa' --vsys 0 --eula accept
+
 
 startvm winxp01 --type gui
 startvm winxp01 --type headless
@@ -91,6 +107,26 @@ modifyvm winxp --audio dsound
 modifyvm winxp --audiocontroller ac97
 modifyvm winxp --audiocontroller hda
 modifyvm winxp --audiocontroller sb16
+modifyvm winxp --nic1 null --cableconnected1 off
+modifyvm winxp --nic1 bridged --cableconnected1 on
+modifyvm winxp --nic1 nat --natpf1 www,tcp,192.168.166,80,10.0.2.15,80
+modifyvm winxp --nic1 nat --natpf1 ftp,tcp,192.168.166,80,10.0.2.15,80
+modifyvm winxp --nic1 hostonly
+dhcpserver add --netname test --ip 192.168.3.1 --netmaks 255.255.255.0 --lowerip 192.168.3.66 --uperip 192.168.3.67 --enable
+dhcpserver modify --netname test --ip 192.168.2.1 --netmask 255.255.255.0 --lowerip 192.168.2.2 --uperip 192.168.2.254
+modifyvm winxp --nic1 intenet --intnet1 'test'
+modifyvm --nic1 bridged --nictype1 virtio --cableconnected1 on
+
+modifyvm winxp --nic1 generic
+modifyvm winxp --nicgenericdrv1 UDPTunnel
+modifyvm winxp --nicproperyt1 dest=192.168.1.88
+modifyvm winxp --nicproperyt1 sport=10001
+modifyvm winxp --nicproperyt1 dport=10002
+
+clonehd 'file/path/to.vdi' 'another/path/to.vdi'
+
+
+
 
 guestproperty enumerate winxp01
 
@@ -114,5 +150,35 @@ convertformraw 'fite/to.img' 'filt/to.vdi' --format vdi
 metrics setup --list
 metrics steup --period 1 --samples 5 hsot CPU/Load,RAM/Usage
 metrics list winxp
+
+modifyvm winxp --vrdeauthtype exteral --vrdemultion on
+
+
+setproperty vrdeauthlibrary 'VBoxAuth'
+setproperty vrdeauthlibrary 'VBoxAuthSimple'
+modifyvm winxp --vrdeauthytype null
+modifyvm winxp --vrdeauthytype external
+modifyvm xinxp --vrdemulticon on
+modifyvm winxp -vrdeport 5000
+internalcommadns passwordhash 'virtualbox'
+setextradata 'winxp' 'VBoxAuthSimple/users/linuxfans' 123abchash
+modifyvm winxp --vrdevideochannel on
+modifyvm winxp --vrdevideochannelquality 75
+modifyvm winxp --vrdemulticon on
+modifyvm winxp --vrdeproperty Client/DisableDisplay=1
+modifyvm winxp --vrdeproperty Client/DisableInput=1
+modifyvm winxp --vrdeproperty Client/DisableUSB=1
+modifyvm winxp --vrdeproperty Client/DisableAudio=1
+modifyvm winxp --vrdeproperty Client/DisableClipboard=1
+modifyvm winxp --vrdeproperty Client/DisableUpstreamAudio=1
+
+rdesktop-vrdp -r usb -a 16 -N 192.168.1.103:5000
+
+
+setproperty vrdeproperty 'Security/Method=negotiate'
+openssl req -new -x509 -days 365 -extensions v3_ca -ckeyout ca_key_private.pem -out ca_cert.pem
+
+
+
 
 
