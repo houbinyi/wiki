@@ -4,4 +4,13 @@ Creation-Date: 2016-02-25T00:02:06+08:00
 
 ====== qemu ======
 
+Ctrl+Alt+1
+Ctrl+Alt+2
+
+info kvm
+info cpus
+info network
+
+
+
 
