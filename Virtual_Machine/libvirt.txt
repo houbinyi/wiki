@@ -6,3 +6,4 @@ Creation-Date: 2016-07-18T13:55:49+08:00
 
 
 
+http://askubuntu.com/questions/705086/libvirt-libvirtd-virtualbox-remote-virsh-list-all-empty
