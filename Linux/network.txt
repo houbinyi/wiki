@@ -17,3 +17,5 @@ net.ipv4.tcp_max_tw_buckets = 5000   ## 设置"time_wait"的桶最多容纳5000�
 
 sysctl -p 让以上配置生效
 
+nslookup
+
