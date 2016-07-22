@@ -19,3 +19,19 @@ sysctl -p 让以上配置生效
 
 nslookup
 
+====================
+sudo vim /etc/network/interfaces
+auto eth0
+iface eth0 inet static
+address 192.168.0.117
+gateway 192.168.0.1 #这个地址你要确认下 网关是不是这个地址
+netmask 255.255.255.0
+network 192.168.0.0
+broadcast 192.168.0.255
+dns-nameservers 1.1.1.1 2.2.2.2
+
+ifdown eth0
+ifup eth0
+
+sudo /etc/init.d/network restart
+
