@@ -16,6 +16,7 @@ http://continuousdelivery.com/2010/08/continuous-delivery-vs-continuous-deployme
 http://www.oracle.com/technetwork/articles/java/deployment-tools-2227133.html
 http://jaseywang.me/2012/08/16/%E8%A7%A3%E5%86%B3-nf_conntrack-table-full-dropping-packet-%E7%9A%84%E5%87%A0%E7%A7%8D%E6%80%9D%E8%B7%AF/
 http://www.ibm.com/developerworks/cn/linux/1407_liuming_init2/
+http://www.cnblogs.com/xiaouisme/p/5008964.html
 
 
 
