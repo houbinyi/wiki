@@ -4,10 +4,12 @@ Creation-Date: 2016-07-05T11:26:36+08:00
 
 ====== Kafka ======
 
+=== Deploy ===
 **Install**
 tar -xzf kafka_2.11-0.10.0.0.tgz
 cd kafka_2.11-0.10.0.0
 
+=== Lunch ===
 **Start Server**
 bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
@@ -25,4 +27,11 @@ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beg
 **Setting up a multi-broker cluster**
 cp config/server.properties config/server-1.properties
 cp config/server.properties config/server-2.properties
+
+=== Core Concept ===
+partion
+replication
+consummer group
+
+
 

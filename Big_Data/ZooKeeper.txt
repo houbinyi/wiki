@@ -4,6 +4,7 @@ Creation-Date: 2016-06-30T16:57:38+08:00
 
 ====== ZooKeeper ======
 
+=== Deploy ===
 cp conf/zoo_sample.cfg conf/zoo.cfg
 
 vim conf/zoo.cfg
@@ -17,3 +18,9 @@ server.2=10.0.30.139:2555:3555
 
 vim conf/myid
 1
+
+=== Lunch ===
+bin/zkServer.sh start
+bin/zkServer.sh start-foreground
+
+
