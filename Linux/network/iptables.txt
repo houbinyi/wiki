@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-04-25T16:30:38+08:00
+
+====== iptables ======
+
+/etc/init.d/iptables.up.rules
+
+=== Command ===
+tableName := nat|mangle|filter
+chainName := INPUT|OUTPUT|FORWARD|PREFOUTING|POSTROUTING
+action := ACCEPT|DROP|REDIRECT|REJECT|SNAT|DNAT|MASQUERADE|LOG
+state := NEW|ESTABLISTED|RELATED|INVALID
+
+**Default policy**
+iptables [-t tableName] <-P> <chainName> <action>
+
+**View iptables rule**
+iptables [-t tableName] <-L> [chainName]
+
+iptables -nv -L (default -t filter)
+
+**AIDR iptables rule**
+iptables -<A|I|D|R> 
+-t <tableName> <chainName> [ruleNumber] 
+[-i|o networkCardName] [-p protocalName] 
+[-s srcIp|srcSubNet] [--sport srcPort] 
+[-d destIp|destSubNet] [--dport destPort] 
+<-j action>
+
+**Clare rule and counter**
+iptables [-t tableName] <-F|Z>
+F:flush all rules
+Z:reset counter to zero
+X:delete user defined chain
+
+=== NAT ===
+echo 1 > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -s 192.168.56.0/24  -j SNAT --to-source 10.0.0.1
+iptables -t nat -A POSTROUTING -s 192.168.56.0/24 -j MASQUERADE
+
+
+
+
+
