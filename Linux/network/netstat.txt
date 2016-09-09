@@ -13,3 +13,5 @@ netstat -i //Display network interfaces stats (RX/TX etc)
 -t : TCP connections
 -u : UDP connections
 -e : Established
+
+netstat -lu

@@ -1,0 +1,89 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-09-08T11:19:13+08:00
+
+====== PXE ======
+
+Other similar tools : cobbler 
+
+Preboot Execution Environment
+
+=== Network ===
+use a static ip address, for the "next-server" in DHCP configuration needs.
+
+sudo vim /etc/network/interfaces
+auto eth0
+iface eth0 inet static
+	address 192.168.56.1
+	netmask 255.255.255.0
+	dns-nameservers 8.8.8.8
+sudo /etc/init.d/networking restart
+
+=== DHCP ===
+set up the DHCP server to offer /tftpboot/pxelinux.0 as a boot file as a minimum. 
+assign a fixed IP to the machine you want to boot with PXE (the client).
+
+sudo apt-get install isc-dhcp-server 
+
+sudo vim /etc/default/isc-dhcp-server
+INTERFACES="vboxnet0"
+
+sudo vim /etc/dhcp/dhcpd.conf
+default-lease-time 600;
+max-lease-time 7200;
+subnet 192.168.1.0 netmask 255.255.255.0 {
+	range 192.168.1.21 192.168.1.240;
+	option subnet-mask 255.255.255.0;
+	option routers 192.168.1.20;
+	option broadcast-address 192.168.1.255;
+	filename "pxelinux.0";
+	next-server 192.168.1.20;
+}
+sudo /etc/init.d/isc-dhcp-server start
+
+=== TFTP ===
+sudo apt-get install tftpd-hpa 
+
+sudo vim /etc/default/tftpd-hpa
+TFTP_USERNAME="tftp"
+TFTP_DIRECTORY="/var/liddib/tftpboot"
+TFTP_ADDRESS="[:0.0.0.0:]:69"
+TFTP_OPTIONS="--secure"
+RUN_DAEMON="yes"
+OPTIONS="-l -s /var/lib/tftpboot"
+sudo service tftpd-hpa restart
+
+=== Config File ===
+sudo apt-get install syslinux 
+sudo apt install pxelinux 
+
+sudo mkdir -p /var/lib/tftpboot/pxelinux.cfg
+sudo mkdir -p /var/lib/tftpboot/boot
+sudo cp /usr/lib/PXELINUX/pxelinux.0  /var/lib/tftpboot
+sudo cp -r /usr/lib/syslinux/modules/bios  /var/lib/tftpboot/boot/isolinux
+
+sudo vim /var/lib/tftpboot/pxelinux.cfg/default 
+LABEL linux
+KERNEL vmlinuz-4.4.0-36-generic
+APPEND root=/dev/nfs initrd=initrd.img-4.4.0-36-generic nfsroot=192.168.56.1:/nfsroot ip=dhcp rw
+
+sudo chmod -R 777 /var/lib/tftpboot
+sudo /etc/init.d/tftpd-hpa start
+
+=== NFS ===
+sudo apt-get install nfs-kernel-server
+sudo mkdir /nfsroot
+sudo vim /etc/exports
+/nfsroot             192.168.2.*(rw,no_root_squash,async,insecure)
+sudo exportfs -rv
+sudo exportfs -a
+sudo/etc/init.d/nfs-kernel-server start
+
+=== KickStart ===
+sudo apt-get install system-config-kickstart
+
+
+
+
+
+

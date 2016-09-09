@@ -18,3 +18,4 @@ sysctl -p 让以上配置生效
 nslookup
 
 
+
