@@ -4,11 +4,23 @@ Creation-Date: 2016-09-08T11:19:13+08:00
 
 ====== PXE ======
 
-Other similar tools : cobbler 
+Other similar tools : **cobbler** 
 
 Preboot Execution Environment
 
-=== Network ===
+http://ipxe.org/cmd
+
+=== Abstraction ===
+client -> DHCP server 
+[IP address], [next server(TFTP address)]
+
+client -> TFTP server
+[nfsroot, 	kernel, initrd...]
+
+client -> NFS server
+[]
+
+=== Network prepare ===
 use a static ip address, for the "next-server" in DHCP configuration needs.
 
 sudo vim /etc/network/interfaces
@@ -19,11 +31,23 @@ iface eth0 inet static
 	dns-nameservers 8.8.8.8
 sudo /etc/init.d/networking restart
 
+=== Files prepare ===
+sudo mount -o loop ubuntu-12.04.3-server-amd64.iso /mnt
+
+//for tftp
+sudo cp -r /mnt/install/netboot/* /var/lib/tftpboot/
+
+//for nfs
+sudo mkdir -p /var/lib/nfs/ubuntu-14.04.5-server-amd64
+sudo cp -r /mnt/* /var/lib/nfs/ubuntu-14.04.5-server-amd64
+
+sudo umount /mnt
+
 === DHCP ===
 set up the DHCP server to offer /tftpboot/pxelinux.0 as a boot file as a minimum. 
 assign a fixed IP to the machine you want to boot with PXE (the client).
 
-sudo apt-get install isc-dhcp-server 
+sudo apt-get install isc-dhcp-serve
 
 sudo vim /etc/default/isc-dhcp-server
 INTERFACES="vboxnet0"
@@ -41,43 +65,38 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 }
 sudo /etc/init.d/isc-dhcp-server start
 
+
 === TFTP ===
 sudo apt-get install tftpd-hpa 
 
 sudo vim /etc/default/tftpd-hpa
 TFTP_USERNAME="tftp"
-TFTP_DIRECTORY="/var/liddib/tftpboot"
+TFTP_DIRECTORY="/var/lib/tftpboot"
 TFTP_ADDRESS="[:0.0.0.0:]:69"
 TFTP_OPTIONS="--secure"
 RUN_DAEMON="yes"
 OPTIONS="-l -s /var/lib/tftpboot"
 sudo service tftpd-hpa restart
 
-=== Config File ===
-sudo apt-get install syslinux 
-sudo apt install pxelinux 
+sudo vim /var/lib/tftpboot/pxelinux.cfg/default
+[...]
+label ubuntu-14.04.5-server-amd64
+	kernel ubuntu-installer/amd64/linux
+	append boot=casper netboot=nfs nfsroot=192.168.56.1:/var/lib/nfs/ubuntu-14.04.5-server-amd64 vga=788 initrd=ubuntu-installer/amd64/initrd.gz root=/dev/nfs --- quiet
 
-sudo mkdir -p /var/lib/tftpboot/pxelinux.cfg
-sudo mkdir -p /var/lib/tftpboot/boot
-sudo cp /usr/lib/PXELINUX/pxelinux.0  /var/lib/tftpboot
-sudo cp -r /usr/lib/syslinux/modules/bios  /var/lib/tftpboot/boot/isolinux
+OR:
+	append ks=http://10.0.0.11/ksfiles/ol6u6_cfg.ks initrd=install/initrd.gz — quiet
+	append ks=nfs:192.168.56.1:/var/lib/nfs/ubuntu-14.04.5-server-amd64/ks.cfg ubuntu-installer/amd64/initrd.gz root=/dev/nfs --- quiet
 
-sudo vim /var/lib/tftpboot/pxelinux.cfg/default 
-LABEL linux
-KERNEL vmlinuz-4.4.0-36-generic
-APPEND root=/dev/nfs initrd=initrd.img-4.4.0-36-generic nfsroot=192.168.56.1:/nfsroot ip=dhcp rw
-
-sudo chmod -R 777 /var/lib/tftpboot
-sudo /etc/init.d/tftpd-hpa start
 
 === NFS ===
 sudo apt-get install nfs-kernel-server
-sudo mkdir /nfsroot
+sudo mkdir /var/lib/nfs
 sudo vim /etc/exports
-/nfsroot             192.168.2.*(rw,no_root_squash,async,insecure)
-sudo exportfs -rv
+/var/lib/nfs            192.168.2.*(rw,no_root_squash,async,insecure)
 sudo exportfs -a
-sudo/etc/init.d/nfs-kernel-server start
+sudo exportfs -rv
+sudo /etc/init.d/nfs-kernel-server start
 
 === KickStart ===
 sudo apt-get install system-config-kickstart
