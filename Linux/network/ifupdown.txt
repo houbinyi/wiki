@@ -4,6 +4,9 @@ Creation-Date: 2016-09-07T15:52:33+08:00
 
 ====== ifupdown ======
 
+
+https://help.ubuntu.com/community/Kerberos
+
 **/usr/share/doc/ifupdown/examples/network-interfaces**
 
 === /etc/network/interfaces ===
