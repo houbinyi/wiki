@@ -19,7 +19,7 @@ apt-file list package
 apt-show-versions
 
 dpkg -S /usr/bin/ls 查看某个文件属于哪个deb包
-dpkg -r debname
+dpkg -r apt 
 dpkg -X xxx.deb dirname
 dpkg -e xxx.deb 
 
@@ -70,3 +70,7 @@ apt-get source package  下载该包的源代码
 sudo apt-get clean && sudo apt-get autoclean 清理无用的包
 sudo apt-get check 检查是否有损坏的依赖
 
+
+sudo dpkg -i XXX.deb
+sudo apt-get install -f
+gdebi /root/flightgear_2.6.0-1.1_amd64.deb

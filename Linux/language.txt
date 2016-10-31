@@ -12,3 +12,4 @@ perl: warning: Please check that your locale settings:
 
 apt-get install language-pack-zh-hans
 
+sudo apt-get install xfonts-wqy
