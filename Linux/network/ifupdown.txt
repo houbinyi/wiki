@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-09-07T15:52:33+08:00
+
+====== ifupdown ======
+
+
+https://help.ubuntu.com/community/Kerberos
+
+**/usr/share/doc/ifupdown/examples/network-interfaces**
+
+=== /etc/network/interfaces ===
+sudo vim /etc/network/interfaces
+
+auto eth0
+iface eth0 inet static
+	address 192.168.1.5
+	network 192.168.0.0
+	netmask 255.255.255.0
+	broadcast 192.168.0.255
+	gateway 192.168.1.254
+	up route add -net 192.168.1.128 netmask 255.255.255.128 gw 192.168.1.2
+	up route add default gw 192.168.1.200
+	down route del default gw 192.168.1.200
+	dns-search ***
+	dns-nameservers ***
+	dns-domain ***
+	down route del -net 192.168.1.128 netmask 255.255.255.128 gw 192.168.1.2
+
+
+sudo ifconfig eth0 down
+sudo ifdown eth0 
+sudo ifconfig eth0 up
+sudo ifup eth0 
+
+sudo service networking restart
+
+=== /etc/resov.conf ===
+nameserver x.x.x.x
+search x.x.x
+domain x.x.x

@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-09-07T17:15:28+08:00
+
+====== diagnose ======
+
+=== wireshark ===
+
+=== TCPDump ===
+tcpdump host 192.168.56.1
+tcpdump host 192.168.56.1 and \(192.168.56.2 or 192.168.56.3\)
+tcpdump ip host 192.168.56.1 and ! 192.168.56.103
+tcpdump icmp -n -i eth0
+tcpdump tcp port 25 and host 192.168.56.103
+
+=== NMap ===
+nmap -sS 192.168.56.1 -255 -p 80,25-30 --v
+-sT/sP : tcp connect
+-sS : tcp SYN
+-sU : udp
+-sA : tcp ACK
+
+=== hping ===
+hping3 -1 -a 192.168.1.101 192.168.1.255

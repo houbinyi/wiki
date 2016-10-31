@@ -231,7 +231,7 @@ openssl req -new -x509 -days 365 -extensions v3_ca -ckeyout ca_key_private.pem -
 							[--vram <vramsize in MB>]
 							[--acpi on|off]
 							[--pciattach 03:04.0]
-							[--pciattach 03:04.0@02:01.0]
+							[--pciattach [[03 : 04 . 0 @ 02 : 01 . 0]] ]
 							[--pcidetach 03:04.0]
 							[--ioapic on|off]
 							[--hpet on|off]
