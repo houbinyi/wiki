@@ -18,6 +18,7 @@ http://jaseywang.me/2012/08/16/%E8%A7%A3%E5%86%B3-nf_conntrack-table-full-droppi
 http://www.ibm.com/developerworks/cn/linux/1407_liuming_init2/
 http://www.cnblogs.com/xiaouisme/p/5008964.html
 http://home.hylanda.com/show_26_17924.html
+https://wido.me/sunteya/understand-bashrc-and-profile/
 
 
 
