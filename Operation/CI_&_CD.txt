@@ -8,3 +8,18 @@ Creation-Date: 2016-07-18T11:04:04+08:00
 Travis CI
 CircleCI
 
+=== continuous integration ===
+unit tests
+smoke tests
+integration tests
+functional tests
+regression tests
+
+=== continous deployment ===
+Integration Tests Environment
+QA Environment
+UAT Environment
+Pre-production/Staging Environment
+Production Environment
+
+=== continous delivery ===
