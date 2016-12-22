@@ -52,19 +52,6 @@ git archive -o some.tar HEAD src doc
 git archive --fromat=tar --prefix=1.0/ v1.0
 git tar-commit-id
 
-
-
-=== git rev-parse ===
-# parse reference variable to hash value
-git rev-parse --git-dir
-git rev-parse --show-toplevel
-git rev-parse --show-prefix
-git rev-parse --show-cdup
-
-git rev-parse master
-git rev-parse HEAD
-git rev-parse refs/heads/master
-
 === git show ===
 git show
 
@@ -85,12 +72,19 @@ git status -s -b
 git status --ignored -s
 
 === git diff ===
+git diff <commit1> <commit2> — <paths>
+git diff <path1> <path2>
+git diff --word-diff
 git diff # workspace - stage
 git diff HEAD # workspace - reporsitory
 git diff master
 git diff --cached # stage - reporsitory
 git diff --cached HEAD
 git diff --cached master
+
+=== git blame ===
+git blame file
+git blame -L 6,+5 file
 
 === git ls ===
 git write-tree # write tree from stage to reporistory
@@ -124,6 +118,7 @@ git branch
 git branch -v
 
 === git reset ===
+# reset HEAD
 git reset [-q] [<commit>] [--] <path>...
 git reset [--soft|--mixed|--hard|--merge|--keep] [-q] [<commit>]
 git reset --hard <commit> # change ref, replace stage, workspace 
@@ -136,7 +131,11 @@ git reflog show master
 git reflog show refs/stash
 
 === git checkout ===
+# check out from stage
 git checkout 123abc
+git checkout [-q] [<commit>] [--] <paths>...
+git checkout [<branch>]
+git checkout [-m] [[-b] --orphan <new_branch>] [<start_point>]
 
 === git stash ===
 git stash
@@ -153,6 +152,32 @@ git tag -m 'message' tagname
 git describe
 
 === git rm ===
+
+=== git archive ===
+git archive -o some
+
+gitk
+gitk --all
+gitk --since="2 weeks ago"
+gitk v2.6.12.. include/scsi drivers/scsi
+
+=== git rev-parse ===
+# parse reference variable to hash value
+git rev-parse --git-dir
+git rev-parse --show-toplevel
+git rev-parse --show-prefix
+git rev-parse --show-cdup
+git rev-parse --parseopt
+git rev-parse --symbolic --branches
+git rev-parse --symbolic --tags
+git rev-parse --symbolic --glob-refs/*
+
+git rev-parse master
+git rev-parse HEAD
+git rev-parse refs/heads/master
+
+== git rev-list ==
+git rev-list HEAD
 
 
 
