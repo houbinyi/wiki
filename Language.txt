@@ -3,5 +3,5 @@ Wiki-Format: zim 0.4
 Creation-Date: 2016-06-30T15:25:50+08:00
 
 ====== Language ======
-Created 星期四 30 六月 2016
+
 
