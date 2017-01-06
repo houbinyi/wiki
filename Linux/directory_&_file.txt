@@ -45,3 +45,6 @@ Creation-Date: 2016-03-28T22:37:41+08:00
 	g. ''rm -r''
 
 lsof
+
+du -sh
+du -lh --max-depth=1

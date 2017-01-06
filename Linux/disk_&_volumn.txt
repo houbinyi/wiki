@@ -30,3 +30,5 @@ sudo mount -a
 #size
 df -h
 df -T
+
+

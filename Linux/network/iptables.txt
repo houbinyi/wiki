@@ -4,6 +4,11 @@ Creation-Date: 2016-04-25T16:30:38+08:00
 
 ====== iptables ======
 
+=== Usefull command ===
+$ iptables -t nat -L # list nat rules
+$ iptables -t nat -F # flush nat rules
+
+
 /etc/init.d/iptables.up.rules
 
 === Command ===
@@ -97,3 +102,11 @@ sudo ifdown eth0
 sudo ifdown eth1                        # Reload changed interface and IPTables
 sudo ifup eth0
 sudo ifup eth1                            # Reload changed interface and IPTables
+
+
+=== Save and Load ===
+$ sudo iptables-save >/etc/iptables-rules
+$ sudo vi  /etc/network/interfaces
+pre-up iptables-restore </etc/iptables-rules
+
+
