@@ -3,10 +3,23 @@ Wiki-Format: zim 0.4
 
 ====== KVM & qemu ======
 
-$ grep -E '(vmx|svm)'   /proc/cpuinfo
+http://os.51cto.com/art/201509/492914.htm
+http://www.cnblogs.com/ccskun/p/5527014.html
+
+=== Check support of KVM ===
+$ egrep "(svm|vmx)" /proc/cpuinfo
 $ cat /boot/config... | grep KVM
-$ sudo apt-get install kvm libvirt-bin ubuntu-vm-builder  bridge-utils kvm-pxe uml-utilities 
+
+=== Install necessary software ===
+$ sudo apt-get install qemu-kvm
+$ sudo apt-get install qemu
+$ sudo apt-get install virt-manager
+$ sudo apt-get install virt-viewer 
+$ sudo apt-get install libvirt-bin 
 $ sudo lsmod | grep kvm
+
+=== Setup network bridge ===
+$ sudo apt-get install bridge-utils
 
 $ sudo /etc/init.d/networking stop
 $ sudo vim /etc/network/interfaces
@@ -31,6 +44,9 @@ bridge_stp off
 bridge_fd 5
 bridge_maxwait 5
 
+$ sudo systemctl stop network-manager
+$ sudo systemctl disable network-manager
+$ sudo systemctl restart networking
 
 $ virsh -c qemu:///system list
 

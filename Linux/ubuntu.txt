@@ -6,3 +6,6 @@ Creation-Date: 2017-01-06T13:09:13+08:00
 
 安装Ubuntu 16.04后要做的事 
 http://blog.csdn.net/skykingf/article/details/45267517
+
+uname -a
+cat [[/etc/issuec]]
