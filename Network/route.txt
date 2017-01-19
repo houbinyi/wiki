@@ -10,6 +10,10 @@ route add default gw 172.16.236.0
 route [-nee]
 route add [-net|-host] [网域或主机] netmask [mask] [gw|dev]
 route del [-net|-host] [网域或主机] netmask [mask] [gw|dev]
+
+添加iptables -t nat -A POSTROUTING -o eth1 -j SNAT --to 192.168.2.173 
+
+
 参数：
    -n  ：不要使用通讯协定或主机名称，直接使用 IP 或 port number；
    -ee ：使用更详细的资讯来显示

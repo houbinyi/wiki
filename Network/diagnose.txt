@@ -14,10 +14,14 @@ tcpdump icmp -n -i eth0
 tcpdump tcp port 25 and host 192.168.56.103
 
 === NMap ===
+sudo apt install nmap
+nmap -sT ***.***.***.***
+nmap -sU ***.***.***.***
 nmap -sS 192.168.56.1 -255 -p 80,25-30 --v
--sT/sP : tcp connect
--sS : tcp SYN
+-sT : tcp
 -sU : udp
+-sP : connect by Ping ICMP
+-sS : tcp SYN
 -sA : tcp ACK
 
 === hping ===

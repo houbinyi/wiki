@@ -6,3 +6,4 @@ Creation-Date: 2016-09-19T17:42:43+08:00
 
 https://help.ubuntu.com/community/Kerberos
 http://www.searchsecurity.com.cn/showcontent_6625.htm
+http://blog.csdn.net/wulantian/article/details/42418231
