@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-05-04T10:55:06+08:00
-
-====== Node.js ======
-
 async.waterfall([
     function(callback){
         callback(null, 'one', 'two');

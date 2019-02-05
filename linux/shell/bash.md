@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-11-30T13:22:28+08:00
-
-====== bash ======
-
 
 # return absolute path
 function absPath {

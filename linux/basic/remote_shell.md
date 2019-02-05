@@ -1,10 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-03-01T10:19:24+08:00
-
-====== remote shell ======
-'''
-
 pdsh -R ssh -l user -w host1,host2 "some command"
 dsh -r ssh -m user@host1 -m user@host2 -- ls -a
 

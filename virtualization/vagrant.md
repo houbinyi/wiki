@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-04-25T17:58:41+08:00
-
-====== vagrant ======
-
 vagrant init  # 初始化
 vagrant up  # 启动虚拟机
 vagrant halt  # 关闭虚拟机

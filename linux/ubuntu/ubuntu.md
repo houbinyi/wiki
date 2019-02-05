@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-01-06T13:09:13+08:00
-
-====== ubuntu ======
-
 安装Ubuntu 16.04后要做的事 
 http://blog.csdn.net/skykingf/article/details/45267517
 

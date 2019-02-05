@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-05-24T12:44:39+08:00
-
-====== package ======
-
 http://blog.csdn.net/michaelwubo/article/details/40588059
 
 sudo apt-get install software-properties-common
@@ -15,7 +9,7 @@ sudo apt-file update
 apt-file search filename
 apt-file search /path/to/file
 apt-file list package
- 
+
 apt-show-versions
 
 dpkg -S /usr/bin/ls 查看某个文件属于哪个deb包

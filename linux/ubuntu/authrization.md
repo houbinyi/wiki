@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-10-18T14:07:55+08:00
-
-====== authrization ======
-
 Ubuntu 使用 AppArmor 作为程序权限限制， Fedora 使用 selinux 作为程序权限限制.在linux中，以往的权限管理，是通过用户绑定的，现在还有一种权限机制，设置程序的访问权限，如：
 
 sudo mysqldump --T db;如果不起动程序权限管理，mysqldump获得root权限，可以在任何文件中进行操作。

@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-06-16T15:19:07+08:00
-
-====== language ======
-
 (1) fix
 perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:

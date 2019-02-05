@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-04-25T16:39:05+08:00
-
-====== deamon ======
-
 === daemon ===
 **start-stop-daemon**
 /sbin/start-stop-daemon --start --quiet --oknodo --make-pidfile --pidfile /opt/nginx.pid --exec /home/chenshu/nginx/bin/nginx  -- -c /home/chenshu/nginx/etc_nginx/nginx.conf

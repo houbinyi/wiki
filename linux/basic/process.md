@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-07-13T10:46:16+08:00
-
-====== process ======
-
 1.只查看该进程：ps -ef | grep 11345
 2.查看该进程打开的文件：lsof -p 11345
 3.查看内存分配：lcat /proc/11345/maps

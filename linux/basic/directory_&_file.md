@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-03-28T22:37:41+08:00
-
-====== directory & file ======
-
 1. ''Standard Directory Pattern''
 	'''
 	[scope] [category] [application]

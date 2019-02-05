@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-05-16T16:27:21+08:00
-
-====== disk & volumn ======
-
 #block device view 
 sudo fdisk -l
 

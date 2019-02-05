@@ -1,9 +1,3 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-02-22T12:01:37+08:00
-
-====== rsync ======
-
 ''rsync [OPTION]... SRC [SRC]... DEST''
 ''rsync [OPTION]... SRC [SRC]... [USER@]HOST:DEST''
 ''rsync [OPTION]... SRC [SRC]... [USER@]HOST::DEST''

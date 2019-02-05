@@ -23,9 +23,5 @@ http://blog.csdn.net/skykingf/article/details/45267517
 Deployment Framewrok
 	Capistrano
 	Fabric
-Software Packaging Tools
-	rpm
-	mock
-	dpkg
-	pbuilder
+
 
