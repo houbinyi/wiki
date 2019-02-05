@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-07-18T13:55:49+08:00
-
-====== libvirt ======
-
-
-
-http://askubuntu.com/questions/705086/libvirt-libvirtd-virtualbox-remote-virsh-list-all-empty

@@ -1,8 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-01-06T13:14:30+08:00
-
-====== VPN ======
-
-PPTP、L2TP、IPSec、OpenVPN和SSTP的区别
-https://qiaodahai.com/pptp-l2tp-ipsec-openvpn-sstp.html
