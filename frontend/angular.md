@@ -1,46 +1,23 @@
-### 程序
+# Angular in one page
 
-视图View
-    包含指令、绑定和表达式的 HTML 元素区域
-    angular最小的UI单
+## 概念
+ 
+- 视图（View）
+  - 包含指令、绑定和表达式的 HTML 元素区域
+  - angular最小的UI单
+- 程序
 
-属性指令：
-    改变元素，组件，其他指令外观和行为的类
-    放在普通元素，以属性的方式出现
-    方括号[]被Angular解释成属性指令
-
-结构型指令：
-    通过添加，移除DOM元素改变DOM布局的类
-    放在ng-template元素上，以属性的方式出现
-    普通元素上的星号*和ng-template上的方括号[]被Angular解释成结构型指令
-
-组件component：
-    拥有模板的指令，是一个MVC单元
-
-模块module：
-    一个加载单元
-
-
-
-```angular2html
-<template>  : HTML的标准标签，不建议使用
-<ng-template>:   <ng-template> tag will be rendered as a comment element, but is's content will be inserted
-<ng-container>:The Angular <ng-container> is a grouping element that doesn't interfere with styles or layout because Angular doesn't put it in the DOM.
-<ng-content></ng-content> 宿主元素的内容
-```
-
-
-当一个属性有星号
-    将其展开成ng-template 和 方括号的形式
-当一个属性有方括号
-    寻找这个属性对应的指令定义
-如果没有找到，匹配标准属性、属性、class或者style
-如果找到了对应的指令定义，按照指令定义执行
+## 解析过程
+1 当一个属性有星号：将其展开成 ng-template 和 方括号的形式
+2 当一个属性有方括号：寻找这个属性对应的指令定义
+3 如果没有找到，匹配标准属性、属性、class或者style
+4 如果找到了对应的指令定义，按照指令定义执行
 
 属性指令（不动宿主元素，只操作其属性和内容）：
 结构型指令（在宿主元素外套了一层ng-template，将宿主元素按内容操作）
 组件（一般是自己定义了一个宿主元素）
 
+## 核心过程
 
 1、确定宿主元素
     如果是属性指令，所在的元素是宿主元素
@@ -75,10 +52,38 @@ ApplicationRef
     tick()
 EmbeddedViewRef
 
+## 核心构造快
+
+### 1、属性指令
+#### 概念
+- 改变元素，组件，其他指令外观和行为的类
+- 放在普通元素，以属性的方式出现
+- 方括号[]被Angular解释成属性指令
 
 
-TS代表数据及其的变化
-HTML，CSS代表数据的呈现
+### 2、结构性指令
+#### 概念
+- 通过添加，移除DOM元素改变DOM布局的类
+- 放在ng-template元素上，以属性的方式出现
+- 普通元素上的星号*和ng-template上的方括号[]被Angular解释成结构型指令
+
+### 3、构件
+#### 概念
+- 拥有模板的指令，是一个MVC单元
+
+
+### 4、管道
+### 5、服务
+### 6、服务提供
+### 7、模块
+#### 概念
+- 一个加载单元
+### 8、路由
+
+
+
+
+
 
 第一步，通过class定义一个类
 第二步，通过装饰器，将这个类装饰成一个构造块
@@ -226,6 +231,10 @@ class IteratorContext {
 ```
 
 ### 自定义组件
+
+TS代表数据及其的变化
+HTML，CSS代表数据的呈现
+
 ```typescript
 @Component({
     selector:"some-name",
@@ -318,6 +327,23 @@ providers:[
 ```
 
 ### 程序
+
+
+
+
+
+
+
+
+
+
+
+```angular2html
+<template>  : HTML的标准标签，不建议使用
+<ng-template>:   <ng-template> tag will be rendered as a comment element, but is's content will be inserted
+<ng-container>:The Angular <ng-container> is a grouping element that doesn't interfere with styles or layout because Angular doesn't put it in the DOM.
+<ng-content></ng-content> 宿主元素的内容
+```
 
 
 
