@@ -1,3 +1,8 @@
+sudo dd if=/dev/zero of=/free bs=1M
+sudo rm -f /free
+VBoxManage modifyhd ubuntu.vdi --compact
+
+
 list hostdvds
 list hostfloppies
 list bridgedifs

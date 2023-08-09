@@ -2,6 +2,11 @@
 
 ### 创建
 
+array
+
+copy
+copyto
+
 eye
 ones
 ones_like
@@ -12,12 +17,20 @@ full_like
 zeros
 zeros_like
 
-array
-
 arange
 linspace
 logspace
+
 random
+random.seed
+random.random
+random.normal
+random.randint
+random.choice
+random.randn
+random.shuffle
+random.RandomState
+
 
 
 frombuffer
@@ -30,73 +43,83 @@ fromstring
 
 repeat
 
+
+
 ### 属性
 
+
+ndim
+shape
 size
 dtype
+nbytes
 
 
 ### 数据类型
 
-bool8
-bool_
+void
+void0
 
-int0
-int16
-int32
-int64
-int8
+bool_
+bool8
+
 int_
 intc
 intp
+int0
+int8
+int16
+int32
+int64
 
 uint
+uintc
+uintp
+uint8
 uint0
 uint16
 uint32
 uint64
-uint8
-uintc
-uintp
 
-float128
+float_
 float16
 float32
 float64
-float_
+float128
 
+complex_
+complex64
 complex128
 complex256
-complex64
-complex_
 
-longcomplex
-longdouble
-longfloat
 longlong
+longfloat
+longdouble
+longcomplex
 
 
-### 算数运算符
+### 算数运算符/一元通用函数
 add
 subtract
 negative
 multiply
 divide
 floor_divide
+power
 mod
 
 abs
 absolute
 exp
 exp2
-power
+expm1
+
 log
 log10
 log1p
 log2
 
-
-### 三角函数
+### 三角函数/一元通用函数
 cos
 cosh
 sin
@@ -131,6 +154,16 @@ cumprod
 cumproduct
 cumsum
 
+count_nonzero
+
+reduce
+accumulate
+at
+reduceat
+
+searchsorted
+
+
 
 ### 比较函数
 
@@ -147,6 +180,11 @@ bitwise_or
 bitwise_xor
 
 ### 拼合
+
+
+split
+concatenate
+
 dsplit
 dstack
 hsplit
@@ -158,6 +196,14 @@ vstack
 transpose
 dot
 reshape
+
+### 排序
+sort
+sort_complex
+argsort
+argpartition
+partition
+
 
 
 
@@ -174,8 +220,6 @@ angle
 append
 apply_along_axis
 apply_over_axes
-argpartition
-argsort
 argwhere
 around
 
@@ -235,17 +279,13 @@ compare_chararrays
 compat
 complexfloating
 compress
-concatenate
 conj
 conjugate
 convolve
-copy
 copysign
-copyto
 core
 corrcoef
 correlate
-count_nonzero
 cov
 cross
 csingle
@@ -277,7 +317,6 @@ error_message
 errstate
 euler_gamma
 expand_dims
-expm1
 extract
 fabs
 fastCopyAndTranspose
@@ -402,10 +441,9 @@ nan
 nan_to_num
 nancumprod
 nancumsum
-nbytes
 ndarray
 ndenumerate
-ndim
+
 ndindex
 nditer
 nested_iters
@@ -423,7 +461,6 @@ os
 outer
 packbits
 pad
-partition
 pi
 piecewise
 place
@@ -481,7 +518,6 @@ savez_compressed
 sctype2char
 sctypeDict
 sctypes
-searchsorted
 select
 set_numeric_ops
 set_printoptions
@@ -492,7 +528,6 @@ seterr
 seterrcall
 seterrobj
 setxor1d
-shape
 shares_memory
 short
 show_config
@@ -503,12 +538,9 @@ sinc
 single
 singlecomplex
 sizesometrue
-sort
-sort_complex
 source
 spacing
-split
-sqrt
+splitsqrt
 square
 squeeze
 stack
@@ -555,8 +587,6 @@ vander
 vdot
 vectorize
 version
-void
-void0
 w
 warnings
 where
